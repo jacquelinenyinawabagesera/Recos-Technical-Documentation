@@ -1,0 +1,29 @@
+site_name: Recos Technical Documentation
+site_url: https://recos-six.vercel.app/
+theme:
+  name: material
+  logo: images/logo.png
+  favicon: images/logo.png
+  palette:
+    primary: purple
+    accent: deep purple
+  font:
+    text: Inter
+    code: Fira Mono
+  features:
+    - navigation.sections
+    - navigation.instant
+    - navigation.expand
+    - toc.integrate
+extra_css:
+  - styles/extra.css
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Features: features.md
+  - How It Works: developer-docs.md
+  - Integrations: integrations.md
+  - API Reference: api-reference.md
+  - Q/A Process: qa-process.md
+  - Deployment Process: deployment-process.md
+  - Code Standards: code-standards.md
