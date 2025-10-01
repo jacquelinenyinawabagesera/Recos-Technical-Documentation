@@ -17,7 +17,7 @@
         <link rel="next" href="../deployment-process/">
       
       
-      <link rel="icon" href="../images/logo.png">
+      <link rel="icon" href="../images/recos-logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
@@ -65,7 +65,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="dark-blue" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -92,7 +92,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Recos Technical Documentation" class="md-header__button md-logo" aria-label="Recos Technical Documentation" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../images/recos-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -140,11 +140,18 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -191,7 +198,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Recos Technical Documentation" class="md-nav__button md-logo" aria-label="Recos Technical Documentation" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../images/recos-logo.png" alt="logo">
 
     </a>
     Recos Technical Documentation
@@ -414,6 +421,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#live-api-docs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Live API Docs
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -482,295 +498,33 @@
 
 
 
-<h1 id="qa-process">Q/A Process</h1>
-<h2 id="testing">Testing</h2>
+<h1 id="qa-process"><span style="font-weight: 1; font-size: 2.1em; color: #232f3e;">Q/A Process</span></h1>
+<hr />
+<h2 id="testing"><span style="font-weight: 300; color: #8645e8;">Testing</span></h2>
 <ul>
-<li><strong>Unit Tests:</strong> All backend logic covered with Django REST unit tests.</li>
-<li><strong>Frontend:</strong> UI tested with manual and automated checks.</li>
-<li><strong>API:</strong> All endpoints tested with Postman.</li>
-</ul>
-<h2 id="code-review">Code Review</h2>
-<ul>
-<li>All PRs reviewed on GitHub.</li>
-<li>Pre-merge checks for lint, tests, and build.</li>
+<li><span style="color: #232f3e;"><b>Unit Tests:</b></span> All backend logic covered with Django REST unit tests.</li>
+<li><span style="color: #232f3e;"><b>Frontend:</b></span> UI tested with manual and automated checks.</li>
+<li><span style="color: #232f3e;"><b>API:</b></span> All endpoints tested with Postman.</li>
 </ul>
 <hr />
-<h2 id="test-coverage">Test Coverage</h2>
+<h2 id="code-review"><span style="font-weight: 300; color: #8645e8;">Code Review</span></h2>
 <ul>
-<li>Automated reports generated for backend code.</li>
-<li>Manual verification for integration flows.</li>
+<li><span style="color: #232f3e;"><b>All PRs</b></span> reviewed on GitHub.</li>
+<li><span style="color: #232f3e;"><b>Pre-merge checks</b></span> for lint, tests, and build.</li>
 </ul>
 <hr />
-<h1 id="api-reference">API Reference</h1>
-<p>Welcome to the <strong>Recos API Reference</strong>. Here you will find everything you need to integrate with, test, and explore the API endpoints that power the Recos platform.</p>
-<hr />
-<h2 id="live-api-docs">Live API Docs</h2>
+<h2 id="test-coverage"><span style="font-weight: 300; color: #8645e8;">Test Coverage</span></h2>
 <ul>
-<li><strong>Postman Online Docs:</strong> <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></li>
-<li><strong>Swagger UI:</strong> <em>Local Only (see screenshots below)</em></li>
+<li><span style="color: #232f3e;"><b>Automated reports</b></span> generated for backend code.</li>
+<li><span style="color: #232f3e;"><b>Manual verification</b></span> for integration flows.</li>
 </ul>
 <hr />
-<h2 id="api-documentation-screenshots">API Documentation Screenshots</h2>
-<h2 id="api-docs-visuals">📸 API Docs Visuals</h2>
-<table>
-<thead>
-<tr>
-<th>Swagger UI Example</th>
-<th>Postman API Docs Example</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="Swagger Screenshot 1" src="../images/swagger1.png" /></td>
-<td><img alt="Postman Screenshot" src="../images/swagger.png" /></td>
-</tr>
-<tr>
-<td><img alt="Swagger Screenshot 2" src="../images/swagger2.png" /></td>
-<td></td>
-</tr>
-<tr>
-<td><img alt="Swagger Screenshot 3" src="../images/swagger3.png" /></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<hr />
-<h2 id="main-endpoints">Main Endpoints</h2>
-<p>Below are the core API endpoints available in Recos. All endpoints follow REST conventions and require authentication unless noted.</p>
-<h3 id="authentication">Authentication</h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /register/           # Recruiter registration
-POST   /login/              # Login
-POST   /logout/             # Logout
-</pre>
-</div>
-
-<h3 id="password-management">Password Management</h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /forgot-password/          # Start password reset
-POST   /reset-password/           # Complete password reset
-POST   /verify-reset-code/        # Verify reset code sent to email
-</pre>
-</div>
-
-<h3 id="recruiter-profile">Recruiter &amp; Profile</h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /users/                    # List all recruiters
-PUT    /update-profile/           # Update your profile
-DELETE /delete-account/           # Delete your account
-</pre>
-</div>
-
-<h3 id="odoo-integration">Odoo Integration</h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /verify-odoo/              # Verify Odoo account
-POST   /odoo-credentials/         # Add Odoo credentials
-GET    /odoo-credentials/list/    # List Odoo credentials
-GET    /companies/                # List companies
-GET    /companies/&lt;company_id&gt;/jobs/    # Get jobs by company
-</pre>
-</div>
-
-<h3 id="jobs-candidates">Jobs &amp; Candidates</h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /jobs/                     # List all jobs
-GET    /jobs/&lt;job_id&gt;/candidates/ # Get candidates for a specific job
-GET    /candidates/               # List all candidates
-GET    /candidates/&lt;candidate_id&gt;/attachments/   # Candidate attachments
-GET    /candidates/&lt;candidate_id&gt;/attachments/download/&lt;attachment_id&gt;/   # Download attachment
-</pre>
-</div>
-
-<h3 id="sync-operations-odoo-data">Sync Operations (Odoo Data)</h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /sync/jobs/company/&lt;company_id&gt;/          # Sync jobs for a company
-POST   /sync/jobs/handle-duplicates/             # Sync jobs & handle duplicates
-POST   /sync/jobs/user/                          # Sync jobs for logged-in user
-POST   /sync/candidates/job/&lt;job_id&gt;/            # Sync candidates for a job
-POST   /sync/candidates/company/&lt;company_id&gt;/    # Sync candidates by company
-POST   /sync/candidates/all/                     # Sync all candidates
-POST   /sync/candidates/&lt;candidate_id&gt;/attachments/   # Sync candidate attachments
-</pre>
-</div>
-
-<h3 id="interview-management">Interview Management</h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /interviews/create/                                   # Create interview
-POST   /interviews/&lt;interview_id&gt;/create-calendar-event/     # Add interview to Google Calendar
-GET    /interviews/&lt;interview_id&gt;/analytics/                 # Get interview analytics (AI/Gemini)
-</pre>
-</div>
-
-<h3 id="ai-reports-conversations">AI Reports &amp; Conversations</h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /interview_conversations/     # List all interview conversations
-GET    /ai-reports/                  # List all AI reports
-</pre>
-</div>
-
-<h3 id="google-calendar-oauth">Google Calendar &amp; OAuth</h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /auth/google/initiate/    # Start Google OAuth
-GET    /auth/google/callback/    # Google OAuth callback
-GET    /api/auth/google/callback/# API-level OAuth callback
-</pre>
-</div>
-
-<hr />
-<h2 id="example-api-usage">Example API Usage</h2>
-<h3 id="odoo-integration_1">Odoo Integration</h3>
+<p><br></p>
+<h2 id="live-api-docs"><span style="font-weight: 300; color: #8645e8;">Live API Docs</span></h2>
 <ul>
-<li><strong>Verify Odoo Account:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /verify-odoo/
-{
-  "instance_url": "https://your-odoo.com",
-  "email": "you@example.com",
-  "api_key": "..."
-}
-</pre>
-</div>
-
-<ul>
-<li><strong>Fetch Jobs from Odoo:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /odoo/jobs
-</pre>
-</div>
-
-<ul>
-<li><strong>Fetch Candidates from Odoo:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /odoo/candidates
-</pre>
-</div>
-
-<hr />
-<h3 id="google-calendar-meet-integration">Google Calendar / Meet Integration</h3>
-<ul>
-<li><strong>Schedule Interview Event:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /interviews/{interview_id}/create-calendar-event/
-</pre>
-</div>
-<ul>
-<li><strong>Create Google Calendar Event:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /calendar/events
-</pre>
-</div>
-<ul>
-<li><strong>Get All Google Meet Links:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /calendar/meets
-</pre>
-</div>
-
-<hr />
-<h3 id="ai-assemblyai-and-gemini">AI, AssemblyAI, and Gemini</h3>
-<ul>
-<li><strong>Start Interview with AI Assistant (transcription):</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /interviews/create/
-</pre>
-</div>
-<ul>
-<li><strong>Get Post-Interview Analytics:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /interviews/{interview_id}/analytics/
-</pre>
-</div>
-
-<hr />
-<h3 id="attachments">Attachments</h3>
-<ul>
-<li><strong>Get Candidate Attachments:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /candidates/{candidate_id}/attachments/
-</pre>
-</div>
-
-<ul>
-<li><strong>Download Attachment:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /candidates/{candidate_id}/attachments/download/{attachment_id}/
-</pre>
-</div>
-
-<hr />
-<h2 id="api-testing-documentation">API Testing &amp; Documentation</h2>
-<ul>
-<li><strong>All APIs are tested in Postman.</strong></li>
-<li>See <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">Postman Docs</a> for live examples and sample payloads.</li>
-<li>See screenshots above for Swagger UI and Postman documentation examples.</li>
+<li><span style="color: #232f3e;"><b>Postman Online Docs:</b></span> <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></li>
 </ul>
 <hr />
-<h2 id="security-authentication">Security &amp; Authentication</h2>
-<ul>
-<li>Most endpoints require authentication via JWT or session.</li>
-<li>Store API keys and secrets in environment variables (<code>.env</code>), <strong>never</strong> commit secrets to your repository.</li>
-</ul>
-<hr />
-<h2 id="more-information">More Information</h2>
-<ul>
-<li>For a full list of all endpoints and models, see the <a href="../developer-docs/">Developer Docs</a>.</li>
-<li>For architecture and integration details, see <a href="../developer-docs/">Developer Docs</a> and <a href="../integrations/">Integrations</a>.</li>
-</ul>
-<hr />
-<blockquote>
-<p>Have questions or need help? See our <a href="./">Q/A Process</a> or contact our team.</p>
-</blockquote>
-<hr />
-<style>
-.api-block {
-  background: #232f3e;
-  border-radius: 10px;
-  padding: 18px 18px 10px 18px;
-  margin: 18px 0 24px 0;
-  overflow-x: auto;
-  font-size: 1.09em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-.api-dark {
-  background: #232f3e !important;
-  color: #fff !important;
-  border-radius: 6px;
-  padding: 12px 14px 8px 14px;
-  margin: 0;
-  font-size: 1em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-</style>
 
 
 
@@ -819,7 +573,7 @@ GET /candidates/{candidate_id}/attachments/download/{attachment_id}/
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.instant", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.instant", "navigation.expand", "toc.integrate", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>
