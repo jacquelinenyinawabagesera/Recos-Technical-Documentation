@@ -1,6 +1,6 @@
 # Recos Technical Documentation
 
-This repository contains the technical documentation for [Recos](https://recos-six.vercel.app/), an AI-powered recruitment assistant for Odoo.
+This repository contains the technical documentation for [Recos](https://recos-six.vercel.app/), an AI-powered recruitment assistant.
 
 ## 🚀 Features
 
