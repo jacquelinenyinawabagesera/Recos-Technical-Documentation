@@ -1,4 +1,8 @@
+# <span style="font-weight: 1; font-size: 2.1em; color: #232f3e">Home</span>
+
 <div align="center" style="margin-bottom: 40px;">
+<!-- <span style="font-weight: 1; font-size: 2.1em; color: #232f3e">Home</span> -->
+
 
 <img src="images/rec.png" alt="Recos Logo"  style="width: 70%; height: auto; max-height: 600px; border-radius: 20px; box-shadow: 0 12px 38px rgba(36,24,78,0.18); margin: 24px 0;" />
 
@@ -30,7 +34,7 @@
 - **Odoo Integration:** Instantly connect, sync jobs/candidates, and manage all recruitment data in one place.
 - **Google Calendar/Meet:** Effortless interview scheduling with automatic Meet link generation.
 - **Real-Time Transcription:** AssemblyAI integration for live interview transcription and Gemini analytics.
-- **Modern Stack:** Next.js, Tailwind CSS, TypeScript, Django REST. Deployed with Vercel CI/CD.
+- **Tech Stack:** Next.js, Tailwind CSS, TypeScript, Django REST. Deployed with Vercel CI/CD.
 - **API-First:** All features accessible via tested REST APIs (see [API Reference](api-reference.md)).
 
 ---

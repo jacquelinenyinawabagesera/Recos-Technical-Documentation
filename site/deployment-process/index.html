@@ -17,7 +17,7 @@
         <link rel="next" href="../code-standards/">
       
       
-      <link rel="icon" href="../images/logo.png">
+      <link rel="icon" href="../images/recos-logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.20">
     
     
@@ -65,7 +65,7 @@
     
     
     
-    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="purple" data-md-color-accent="deep-purple">
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="dark-blue" data-md-color-accent="deep-purple">
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -92,7 +92,7 @@
   <nav class="md-header__inner md-grid" aria-label="Header">
     <a href=".." title="Recos Technical Documentation" class="md-header__button md-logo" aria-label="Recos Technical Documentation" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../images/recos-logo.png" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -140,11 +140,18 @@
       </label>
       <nav class="md-search__options" aria-label="Search">
         
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
         <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
       </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
       
     </form>
     <div class="md-search__output">
@@ -191,7 +198,7 @@
   <label class="md-nav__title" for="__drawer">
     <a href=".." title="Recos Technical Documentation" class="md-nav__button md-logo" aria-label="Recos Technical Documentation" data-md-component="logo">
       
-  <img src="../images/logo.png" alt="logo">
+  <img src="../images/recos-logo.png" alt="logo">
 
     </a>
     Recos Technical Documentation
@@ -410,27 +417,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#frontend" class="md-nav__link">
+  <a href="#frontend-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Frontend
+      Frontend Deployment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#backend" class="md-nav__link">
+  <a href="#backend-deployment" class="md-nav__link">
     <span class="md-ellipsis">
-      Backend
+      Backend Deployment
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cicd" class="md-nav__link">
+  <a href="#cicd-pipeline" class="md-nav__link">
     <span class="md-ellipsis">
-      CI/CD
+      CI/CD Pipeline
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#best-practices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Best Practices
     </span>
   </a>
   
@@ -482,21 +498,37 @@
 
 
 
-<h1 id="deployment-process">Deployment Process</h1>
-<h2 id="frontend">Frontend</h2>
+<h1 id="deployment-process"><span style="font-weight: 1; font-size: 2.1em; color: #232f3e;">Deployment Process</span></h1>
+<hr />
+<h2 id="frontend-deployment"><span style="font-weight: 300; color: #8645e8;">Frontend Deployment</span></h2>
 <ul>
-<li>Deployed to Vercel, auto-deployment from <code>main</code> branch.</li>
-<li>Environment variables managed via <code>.env</code>.</li>
+<li><span style="color: #232f3e;"><b>Platform:</b></span> Vercel</li>
+<li><span style="color: #232f3e;"><b>Branch:</b></span> Auto-deployment from <code>main</code></li>
+<li><span style="color: #232f3e;"><b>Environment Variables:</b></span> Managed securely via <code>.env</code> in Vercel dashboard</li>
+<li><span style="color: #232f3e;"><b>Build &amp; Preview:</b></span> Each push triggers preview builds for PRs and deploys on merge to <code>main</code></li>
 </ul>
-<h2 id="backend">Backend</h2>
+<hr />
+<h2 id="backend-deployment"><span style="font-weight: 300; color: #8645e8;">Backend Deployment</span></h2>
 <ul>
-<li>Django REST deployed using [your deployment method, e.g., Heroku, AWS, etc.]</li>
-<li>Static/media files managed via cloud storage if needed.</li>
+<li><span style="color: #232f3e;"><b>Platform:</b></span> Django REST API deployed on Heroku</li>
+<li><span style="color: #232f3e;"><b>Static/Media Files:</b></span> Managed via cloud storage (e.g., AWS S3), if required</li>
+<li><span style="color: #232f3e;"><b>Environment Variables:</b></span> Configured in Heroku dashboard for security</li>
+<li><span style="color: #232f3e;"><b>Scaling:</b></span> Automatic scaling via Heroku dynos for increased demand</li>
 </ul>
-<h2 id="cicd">CI/CD</h2>
+<hr />
+<h2 id="cicd-pipeline"><span style="font-weight: 300; color: #8645e8;">CI/CD Pipeline</span></h2>
 <ul>
-<li>GitHub Actions for all codebases.</li>
-<li>Pre-deploy: test, build, and lint checks.</li>
+<li><span style="color: #232f3e;"><b>Tool:</b></span> GitHub Actions</li>
+<li><span style="color: #232f3e;"><b>Pre-Deployment:</b></span> All codebases run tests, build, and lint checks before deploy</li>
+<li><span style="color: #232f3e;"><b>Automation:</b></span> Automatic deployment on merge to <code>main</code></li>
+<li><span style="color: #232f3e;"><b>Status:</b></span> Build and test status visible in PRs and repository dashboard</li>
+</ul>
+<hr />
+<h2 id="best-practices"><span style="font-weight: 300; color: #8645e8;">Best Practices</span></h2>
+<ul>
+<li><span style="color: #232f3e;"><b>Secrets Management:</b></span> Never commit secrets; always use environment variable configuration</li>
+<li><span style="color: #232f3e;"><b>Rollback:</b></span> Use Vercel and Heroku dashboards to rollback failed deployments</li>
+<li><span style="color: #232f3e;"><b>Monitoring:</b></span> Monitor deployments and logs for errors using integrated dashboards</li>
 </ul>
 <hr />
 
@@ -547,7 +579,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.instant", "navigation.expand", "toc.integrate"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.instant", "navigation.expand", "toc.integrate", "search.highlight", "search.suggest", "search.share"], "search": "../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="../assets/javascripts/bundle.f55a23d4.min.js"></script>

@@ -4,12 +4,7 @@
     --md-typeset-a-color: #8645E8;
     --md-code-bg-color: #f8f8fa;
   }
-  
   img {
     border-radius: 12px;
     box-shadow: 0px 4px 16px rgba(36, 24, 78, 0.07);
-  }
-  
-  .md-footer {
-    display: none !important;
   }

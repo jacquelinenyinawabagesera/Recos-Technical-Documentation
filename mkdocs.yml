@@ -24,12 +24,6 @@ theme:
 extra_css:
   - styles/extra.css
 
-extra:
-  footer: |
-    <div style="background: #8645e8; color: #fff; padding: 24px 0; text-align: center; font-size: 1.15em; font-family: Inter, sans-serif;">
-      <span style="font-weight: 600; font-size: 1.2em; color: #fff;">Created by <span style="color: #fff; letter-spacing: 2px;">Recos</span> &copy; 2025</span>
-    </div>
-
 nav:
   - Home: index.md
   - Getting Started: getting-started.md

@@ -12,11 +12,9 @@ Learn more about the architecture, workflows, best practices, and integration de
 - <span style="color: #232f3e;"><b>Frontend:</b></span> Next.js + Tailwind CSS + TypeScript (deployed on Vercel)
 - <span style="color: #232f3e;"><b>Backend:</b></span> Python, Django REST Framework
 - <span style="color: #232f3e;"><b>Database:</b></span> PostgreSQL
-- <span style="color: #232f3e;"><b>Cache:</b></span> Redis (sessions, verification codes, performance)
 - <span style="color: #232f3e;"><b>Integrations:</b></span> Odoo ERP, Google Calendar API, AssemblyAI (transcriptions), Gemini (AI analytics)
 - <span style="color: #232f3e;"><b>CI/CD:</b></span> GitHub Actions, Vercel
 - <span style="color: #232f3e;"><b>Backend Deployment:</b></span> Heroku (Django app)
-- <span style="color: #232f3e;"><b>Monitoring:</b></span> Sentry (error tracking), logging in Django and Vercel dashboards
 - <span style="color: #232f3e;"><b>Backend Logs:</b></span> Heroku logs were checked regularly to collect error traces and debug production issues
 
 ---
@@ -167,7 +165,7 @@ Learn more about the architecture, workflows, best practices, and integration de
 - **Heroku Logs:**  
   Regularly check logs using:
   ```bash
-  heroku logs --tail --app <your-heroku-app-name>
+  heroku logs --app recos
   ```
   This helps in collecting error traces and debugging production issues.
 
@@ -175,7 +173,6 @@ Learn more about the architecture, workflows, best practices, and integration de
 
 ## <span style="font-weight: 300; color: #8645e8;">Monitoring & Logging</span>
 
-- **Sentry:** Error monitoring for frontend and backend
 - **Django Logging:** Configured via `settings.py`  
 - **Heroku Logging:** Access with `heroku logs --tail`
 - **Vercel Logging:** Access via Vercel dashboard
@@ -204,16 +201,12 @@ Learn more about the architecture, workflows, best practices, and integration de
   python manage.py flush
   ```
 - **Create superuser:**  
-  ```bash
+  ```
   python manage.py createsuperuser
   ```
 - **Frontend build:**  
-  ```bash
-  npm run build
   ```
-- **API schema export:**  
-  ```bash
-  python manage.py spectacular --file schema.yml
+  npm run build
   ```
 
 ---
