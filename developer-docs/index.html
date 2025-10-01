@@ -589,11 +589,9 @@ Learn more about the architecture, workflows, best practices, and integration de
 <li><span style="color: #232f3e;"><b>Frontend:</b></span> Next.js + Tailwind CSS + TypeScript (deployed on Vercel)</li>
 <li><span style="color: #232f3e;"><b>Backend:</b></span> Python, Django REST Framework</li>
 <li><span style="color: #232f3e;"><b>Database:</b></span> PostgreSQL</li>
-<li><span style="color: #232f3e;"><b>Cache:</b></span> Redis (sessions, verification codes, performance)</li>
 <li><span style="color: #232f3e;"><b>Integrations:</b></span> Odoo ERP, Google Calendar API, AssemblyAI (transcriptions), Gemini (AI analytics)</li>
 <li><span style="color: #232f3e;"><b>CI/CD:</b></span> GitHub Actions, Vercel</li>
 <li><span style="color: #232f3e;"><b>Backend Deployment:</b></span> Heroku (Django app)</li>
-<li><span style="color: #232f3e;"><b>Monitoring:</b></span> Sentry (error tracking), logging in Django and Vercel dashboards</li>
 <li><span style="color: #232f3e;"><b>Backend Logs:</b></span> Heroku logs were checked regularly to collect error traces and debug production issues</li>
 </ul>
 <hr />
@@ -723,13 +721,12 @@ Learn more about the architecture, workflows, best practices, and integration de
 <li><strong>Heroku Logs:</strong><br />
   Regularly check logs using:
   <code>bash
-  heroku logs --tail --app &lt;your-heroku-app-name&gt;</code>
+  heroku logs --app recos</code>
   This helps in collecting error traces and debugging production issues.</li>
 </ul>
 <hr />
 <h2 id="monitoring-logging"><span style="font-weight: 300; color: #8645e8;">Monitoring &amp; Logging</span></h2>
 <ul>
-<li><strong>Sentry:</strong> Error monitoring for frontend and backend</li>
 <li><strong>Django Logging:</strong> Configured via <code>settings.py</code>  </li>
 <li><strong>Heroku Logging:</strong> Access with <code>heroku logs --tail</code></li>
 <li><strong>Vercel Logging:</strong> Access via Vercel dashboard</li>
@@ -755,14 +752,9 @@ Learn more about the architecture, workflows, best practices, and integration de
 <code>bash
   python manage.py flush</code></li>
 <li><strong>Create superuser:</strong><br />
-<code>bash
-  python manage.py createsuperuser</code></li>
+<code>python manage.py createsuperuser</code></li>
 <li><strong>Frontend build:</strong><br />
-<code>bash
-  npm run build</code></li>
-<li><strong>API schema export:</strong><br />
-<code>bash
-  python manage.py spectacular --file schema.yml</code></li>
+<code>npm run build</code></li>
 </ul>
 <hr />
 
