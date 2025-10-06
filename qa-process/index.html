@@ -401,39 +401,6 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Testing">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#backend-unit-tests" class="md-nav__link">
-    <span class="md-ellipsis">
-      Backend Unit Tests
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#frontend-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      Frontend Testing
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#api-testing" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Testing
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -446,9 +413,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#live-api-docs" class="md-nav__link">
+  <a href="#postman-api-documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Live API Docs
+      Postman API Documentation
     </span>
   </a>
   
@@ -524,8 +491,9 @@
 
 <h1 id="qa-process"><span style="font-weight: bold; font-size: 1.5em; color: #232f3e;">Q/A Process</span></h1>
 <hr />
-<h2 id="testing"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Testing</span></h2>
-<h3 id="backend-unit-tests">Backend Unit Tests</h3>
+<h2 id="testing"><span style="font-weight: bold; color: #8645e8; font-size: 1.2em;">Testing</span></h2>
+<hr />
+<p><strong><span style="font-weight: bold; font-size: 1.1em;">Backend Unit Tests</span></strong></p>
 <p>All backend tests should include normal use, edge cases, and error handling.</p>
 <p><strong>How to run and check tests:</strong></p>
 <pre><code class="language-shell">python manage.py test
@@ -539,7 +507,8 @@ class ItemModelTest(TestCase):
         item = Item.objects.create(name=&quot;Test Item&quot;)
         self.assertEqual(str(item), &quot;Test Item&quot;)
 </code></pre>
-<h3 id="frontend-testing">Frontend Testing</h3>
+<hr />
+<p><strong><span style="font-weight: bold; font-size: 1.1em;">Frontend Testing</span></strong></p>
 <p>All UI components must have automated tests using Jest + React Testing Library, as well as manual validation.</p>
 <p><strong>How to run tests:</strong></p>
 <pre><code class="language-shell">npm run test
@@ -554,23 +523,26 @@ test('renders with label', () =&gt; {
 });
 </code></pre>
 <p>For every new feature, fill out the manual testing checklist.</p>
-<h3 id="api-testing">API Testing</h3>
+<hr />
+<p><strong><span style="font-weight: bold; font-size: 1.1em;">API Testing</span></strong></p>
 <p>All API endpoints must be tested using Postman collections.<br />
 Update Postman tests as endpoints change.</p>
-<h2 id="example-workflow">Example workflow</h2>
+<hr />
+<h2 id="example-workflow"><span style="font-weight: bold;font-size: 1em;">Example workflow</span></h2>
 <hr />
 <ul>
-<li>Create a Postman request to <code>/api/items/</code></li>
+<li>Create a Postman request to <code>/api/users/</code></li>
 <li>Check for status 200 and correct response JSON.</li>
 <li>Run the full Postman collection before major merges.</li>
 </ul>
 <hr />
+<h2 id="postman-api-documentation"><span style="font-weight: bold; color: #8645e8; font-size: 1em;">Postman API Documentation</span></h2>
 <hr />
-<h2 id="live-api-docs"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Live API Docs</span></h2>
-<p><strong>Postman Documentation:</strong><br />
-- Always keep API documentation up to date with code changes.
-- Update docs after adding, changing, or removing endpoints.
-- <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></p>
+<ul>
+<li>Always keep API documentation up to date with code changes.</li>
+<li>Update docs after adding, changing, or removing endpoints.</li>
+<li><a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></li>
+</ul>
 <hr />
 
 
