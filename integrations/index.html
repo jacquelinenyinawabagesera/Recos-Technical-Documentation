@@ -406,15 +406,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#5-troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Troubleshooting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#6-best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       6. Best Practices
@@ -493,27 +484,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#7-troubleshooting" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. Troubleshooting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#8-security-and-best-practices" class="md-nav__link">
     <span class="md-ellipsis">
       8. Security and Best Practices
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#9-error-handling" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Error Handling
     </span>
   </a>
   
@@ -570,24 +543,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#5-troubleshooting_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Troubleshooting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-best-practices_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Best Practices
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -625,33 +580,6 @@
   <a href="#3-send-data-for-ai-analysis" class="md-nav__link">
     <span class="md-ellipsis">
       3. Send Data for AI Analysis
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#4-handle-response" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Handle Response
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#5-troubleshooting_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Troubleshooting
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#6-best-practices_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Best Practices
     </span>
   </a>
   
@@ -793,9 +721,6 @@
 
 
 <h1 id="integrations-guide"><span style="font-weight: bold; font-size: 1.5em; color: #232f3e;">Integrations Guide</span></h1>
-<p>This comprehensive guide provides step-by-step instructions for integrating your platform with Odoo, Google Calendar/Meet, AssemblyAI, and Gemini (Google AI).<br />
-It covers setup, configuration, API usage, troubleshooting, and best practices to ensure smooth implementation and secure operations.</p>
-<hr />
 <h2 id="table-of-contents">Table of Contents</h2>
 <ol>
 <li><a href="#odoo-integration">Odoo Integration</a></li>
@@ -813,7 +738,6 @@ Connect to Odoo for managing jobs, candidates, and company data.</p>
 <ul>
 <li>Odoo Instance URL: e.g., <code>https://your-odoo-instance.com</code></li>
 <li>API Key: Generate in Odoo (Settings → API Keys)</li>
-<li>Permissions: Ensure your user has access to jobs, candidates, and companies</li>
 </ul>
 <h3 id="2-store-credentials-in-env">2. Store Credentials (in <code>.env</code>)</h3>
 <pre><code>ODOO_URL=https://your-odoo-instance.com
@@ -833,34 +757,10 @@ print(response.json())
 <li><code>GET /odoo/jobs</code> — Fetch jobs</li>
 <li><code>GET /odoo/candidates</code> — Fetch candidates</li>
 </ul>
-<h3 id="5-troubleshooting">5. Troubleshooting</h3>
-<table>
-<thead>
-<tr>
-<th>Issue</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>401 Unauthorized</td>
-<td>Check API key and user permissions</td>
-</tr>
-<tr>
-<td>Connection Error</td>
-<td>Ensure Odoo server is running and accessible</td>
-</tr>
-<tr>
-<td>Timeouts</td>
-<td>Optimize endpoints, use pagination if available</td>
-</tr>
-</tbody>
-</table>
 <h3 id="6-best-practices">6. Best Practices</h3>
 <ul>
 <li>Never log or expose API keys</li>
 <li>Use environment variables for sensitive data</li>
-<li>Handle rate limiting and implement retry logic</li>
 </ul>
 <hr />
 <h2 id="google-calendar-and-google-meet-integration">Google Calendar and Google Meet Integration</h2>
@@ -916,45 +816,11 @@ meet_link = created_event['hangoutLink']
 <li><code>POST /calendar/events</code> — Create event and Meet link</li>
 <li><code>GET /calendar/meets</code> — List Meet links</li>
 </ul>
-<h3 id="7-troubleshooting">7. Troubleshooting</h3>
-<table>
-<thead>
-<tr>
-<th>Issue</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Redirect URI mismatch</td>
-<td>Ensure URI matches in Google Console and your app</td>
-</tr>
-<tr>
-<td>Missing <code>conferenceData</code></td>
-<td>Add <code>conferenceDataVersion=1</code> when creating events</td>
-</tr>
-<tr>
-<td>Token expired</td>
-<td>Implement token refresh logic</td>
-</tr>
-<tr>
-<td>Invalid credentials</td>
-<td>Check your <code>credentials.json</code> and <code>.env</code></td>
-</tr>
-</tbody>
-</table>
 <h3 id="8-security-and-best-practices">8. Security and Best Practices</h3>
 <ul>
 <li>Never expose <code>credentials.json</code></li>
 <li>Encrypt and securely store tokens</li>
-<li>Use HTTPS for all OAuth flows</li>
 </ul>
-<h3 id="9-error-handling">9. Error Handling</h3>
-<ul>
-<li>Log errors and monitor (e.g., Sentry)</li>
-<li>Always handle exceptions for network/API calls</li>
-</ul>
-<hr />
 <h2 id="assemblyai-integration">AssemblyAI Integration</h2>
 <p><strong>Purpose:</strong><br />
 Transcribe interviews in real time and generate text transcripts.</p>
@@ -990,35 +856,6 @@ while True:
     time.sleep(5)
 transcript_text = res.json()['text']
 </code></pre>
-<h3 id="5-troubleshooting_1">5. Troubleshooting</h3>
-<table>
-<thead>
-<tr>
-<th>Issue</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Large files</td>
-<td>Use chunked upload for &gt;100MB</td>
-</tr>
-<tr>
-<td>API limits</td>
-<td>Monitor and handle rate limiting</td>
-</tr>
-<tr>
-<td>Audio format</td>
-<td>Use standard formats (mp3, wav, etc.)</td>
-</tr>
-</tbody>
-</table>
-<h3 id="6-best-practices_1">6. Best Practices</h3>
-<ul>
-<li>Never expose your API key</li>
-<li>Delete audio files after processing</li>
-</ul>
-<hr />
 <h2 id="gemini-integration-ai-reports">Gemini Integration (AI Reports)</h2>
 <p><strong>Purpose:</strong><br />
 Analyze interviews, extract sentiment, and generate candidate recommendations using Google Gemini.</p>
@@ -1028,7 +865,7 @@ Analyze interviews, extract sentiment, and generate candidate recommendations us
 <li>Obtain API key and set quotas</li>
 </ul>
 <h3 id="2-store-api-key-in-env_1">2. Store API Key (in <code>.env</code>)</h3>
-<pre><code>GEMINI_API_KEY=your_api_key
+<pre><code>GEMINI_API_KEY=api_key
 </code></pre>
 <h3 id="3-send-data-for-ai-analysis">3. Send Data for AI Analysis</h3>
 <pre><code class="language-python">import requests
@@ -1038,48 +875,9 @@ data = {&quot;interview_text&quot;: transcript_text, &quot;candidate_profile&quo
 response = requests.post(&quot;https://gemini.googleapis.com/v1/analyze&quot;, json=data, headers=headers)
 report = response.json()
 </code></pre>
-<h3 id="4-handle-response">4. Handle Response</h3>
-<ul>
-<li>Parse report for recommendations, strengths, gaps, and scores</li>
-<li>Display results in your dashboard</li>
-</ul>
-<h3 id="5-troubleshooting_2">5. Troubleshooting</h3>
-<table>
-<thead>
-<tr>
-<th>Issue</th>
-<th>Solution</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>API errors</td>
-<td>Validate data format and authentication</td>
-</tr>
-<tr>
-<td>Quota</td>
-<td>Monitor usage, request more if needed</td>
-</tr>
-<tr>
-<td>Latency</td>
-<td>Show loading indicator for slow reports</td>
-</tr>
-</tbody>
-</table>
-<h3 id="6-best-practices_2">6. Best Practices</h3>
-<ul>
-<li>Never expose your Gemini API key</li>
-<li>Validate and sanitize all data sent to Gemini</li>
-</ul>
-<hr />
 <h2 id="general-troubleshooting-and-best-practices">General Troubleshooting and Best Practices</h2>
 <ul>
 <li>Use <code>.env</code> for all secrets—never commit credentials</li>
-<li>Enforce HTTPS for all APIs and OAuth flows</li>
-<li>Monitor logs (Django, Vercel, Heroku, Sentry) for errors and usage</li>
-<li>Handle errors gracefully and inform users of next steps</li>
-<li>Keep API libraries updated for security and compatibility</li>
-<li>Test integrations with sandbox/test accounts before production</li>
 </ul>
 <hr />
 <h2 id="references-and-further-reading">References and Further Reading</h2>
