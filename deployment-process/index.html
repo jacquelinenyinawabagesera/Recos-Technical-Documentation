@@ -512,25 +512,34 @@
 <h2 id="frontend-deployment"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">Frontend Deployment</span></h2>
 <p><strong>Platform:</strong><br />
 Vercel</p>
+<hr />
 <p><strong>Deployment Branch:</strong><br />
-Auto-deployment is enabled from the <code>main</code> branch. Only merges to <code>main</code> trigger a production deployment.</p>
+Auto-deployment is enabled from the <code>main</code> branch. Only merges to <code>main</code> trigger a production deployment.
+--</p>
 <p><strong>Pre-Deployment (Local Build):</strong><br />
 Before pushing code, always run a local production build to catch issues early:</p>
 <pre><code class="language-shell">npm run build
 </code></pre>
-<p>Fix any errors that appear before pushing your changes.</p>
-<p><strong>Environment Variables:</strong><br />
-Environment variables are set securely in the Vercel dashboard (Project Settings → Environment Variables). All variables must be documented in an internal file (e.g., <code>ENVIRONMENT_VARIABLES.md</code>). When adding a variable, describe its purpose and expected value, and ensure it is reviewed in the PR.</p>
-<p><strong>Build &amp; Preview Process:</strong><br />
-Each push or PR triggers a Vercel preview build. Preview URLs appear in the PR and the Vercel dashboard. Merging to <code>main</code> triggers a production deployment. To view a preview, open your PR on GitHub and look for the "Vercel Preview" check.</p>
-<p><strong>Failure &amp; Rollback:</strong><br />
-If deployment fails, check build logs and errors in the Vercel dashboard ("Deployments"). Fix the problem and push a new commit. To rollback, revert <code>main</code> to a previous working commit and redeploy. Only admins/developers can access the Vercel dashboard—request access from the admin if needed.</p>
-<p><strong>Monitoring:</strong><br />
-Use the Vercel dashboard for deployment status, logs, and analytics. Set up Vercel alerts (e.g., email) for failed deployments.</p>
+<hr />
+<p><strong>Build &amp; Preview Process:</strong></p>
+<ul>
+<li>Each push or pull request (PR) automatically triggers a Vercel preview build.</li>
+<li>Preview URLs are available both in the PR (on GitHub) and in the Vercel dashboard.</li>
+<li>Merging to the <code>main</code> branch triggers a production deployment.</li>
+<li>To view a build preview, open your PR on GitHub and look for the "Vercel Preview" check.</li>
+</ul>
+<hr />
+<p><strong>Failure:</strong></p>
+<ul>
+<li>If deployment fails, review build logs and errors in the Vercel dashboard under "Deployments."</li>
+<li>Resolve any issues and push a new commit to trigger a redeployment.</li>
+<li>To rollback, revert the <code>main</code> branch to a previous working commit and redeploy.</li>
+</ul>
 <hr />
 <h2 id="backend-deployment"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">Backend Deployment</span></h2>
 <p><strong>Platform:</strong><br />
-Django REST API deployed on Heroku</p>
+Heroku</p>
+<hr />
 <p><strong>Deployment Trigger and Access:</strong><br />
 The admin deploys after merging all approved PRs to <code>develop</code> and then to <code>main</code>. Only the admin and one developer have Heroku dashboard access. The developer can view logs only; only the admin can deploy.</p>
 <p><strong>Pre-Deployment (Local Build/Test):</strong><br />
