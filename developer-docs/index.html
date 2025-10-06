@@ -401,15 +401,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#running-locally" class="md-nav__link">
-    <span class="md-ellipsis">
-      Running Locally
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#deployment" class="md-nav__link">
     <span class="md-ellipsis">
       Deployment
@@ -613,18 +604,7 @@ Learn more about the architecture, workflows, best practices, and integration de
 <li><strong>Unit tests:</strong> Every Django model, serializer, and view (<code>pytest</code>, <code>unittest</code>)</li>
 <li><strong>Frontend tests:</strong> React components with <code>Jest</code> and <code>React Testing Library</code></li>
 <li><strong>Integration tests:</strong> API endpoints, user flows (authentication, interview scheduling)</li>
-<li><strong>Test coverage:</strong> Generated on CI, reports in PRs</li>
-<li><strong>Commands:</strong>
-  ```bash
-  # Backend
-  python manage.py test
-  pytest --cov=backend</li>
 </ul>
-<p># Frontend
-  npm test
-  npm run coverage
-  ```</p>
-<hr />
 <h2 id="api-documentation"><span style="font-weight: 300; color: #8645e8;">API Documentation</span></h2>
 <ul>
 <li><strong>Swagger UI:</strong> Available at <code>/api/swagger</code> in development</li>
@@ -642,7 +622,6 @@ Learn more about the architecture, workflows, best practices, and integration de
 <li>Backend: <code>black</code></li>
 <li><strong>Type Checking:</strong></li>
 <li>Frontend: TypeScript (<code>tsc</code>)</li>
-<li>Backend: <code>mypy</code></li>
 <li><strong>Style Guides:</strong>  </li>
 <li><a href="https://nextjs.org/docs">Next.js Best Practices</a></li>
 <li><a href="https://www.django-rest-framework.org/">Django REST Framework Style</a></li>
@@ -668,47 +647,6 @@ Learn more about the architecture, workflows, best practices, and integration de
 <li><code>tests/</code> — Backend and frontend tests, fixtures, mocks</li>
 <li><code>scripts/</code> — Utility scripts for migration, data seeding, etc.</li>
 </ul>
-<hr />
-<h2 id="running-locally"><span style="font-weight: 300; color: #8645e8;">Running Locally</span></h2>
-<p><strong>Setup Steps:</strong>
-1. Clone repository<br />
-<code>bash
-   git clone https://github.com/your-org/your-repo.git
-   cd your-repo</code>
-2. Copy <code>.env.example</code> to <code>.env</code> and fill all secrets<br />
-<code>bash
-   cp .env.example .env</code>
-3. <strong>Install dependencies:</strong>
-   - Backend:
-     <code>bash
-     pip install -r backend/requirements.txt
-     python manage.py migrate</code>
-   - Frontend:
-     <code>bash
-     npm install</code>
-4. <strong>Start servers:</strong>
-   - Backend:
-     <code>bash
-     python manage.py runserver</code>
-   - Frontend:
-     <code>bash
-     npm run dev</code>
-5. <strong>Run tests:</strong>
-   - Backend:
-     <code>bash
-     python manage.py test</code>
-   - Frontend:
-     <code>bash
-     npm test</code>
-6. <strong>Lint and format:</strong>
-   - Backend:
-     <code>bash
-     flake8 backend/
-     black backend/</code>
-   - Frontend:
-     <code>bash
-     npm run lint
-     npm run format</code></p>
 <hr />
 <h2 id="deployment"><span style="font-weight: 300; color: #8645e8;">Deployment</span></h2>
 <ul>
