@@ -437,15 +437,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unused-code-refactoring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Unused Code &amp; Refactoring
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#live-api-docs" class="md-nav__link">
     <span class="md-ellipsis">
       Live API Docs
@@ -526,7 +517,7 @@
 <hr />
 <h2 id="testing"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Testing</span></h2>
 <h3 id="backend-unit-tests">Backend Unit Tests</h3>
-<p>All backend business logic must be covered by Django REST unit tests.<br />
+<p>All backend logic must be covered by Django REST unit tests.<br />
 Tests should include normal use, edge cases, and error handling.</p>
 <p><strong>How to run and check tests:</strong></p>
 <pre><code class="language-shell">python manage.py test
@@ -562,16 +553,6 @@ Update Postman tests as endpoints change.</p>
 - Create a Postman request to <code>/api/items/</code>
 - Check for status 200 and correct response JSON.
 - Run the full Postman collection before major merges.</p>
-<hr />
-<h2 id="unused-code-refactoring"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Unused Code &amp; Refactoring</span></h2>
-<ul>
-<li>Unused or commented-out code must be removed before merging any PR.</li>
-<li>Automated linters (<code>flake8</code> for backend, <code>eslint</code> for frontend) and IDE warnings should be used to find dead code.</li>
-</ul>
-<p><strong>Example workflow:</strong>
-1. Run linter before PR to identify unused code.
-2. Remove or refactor as needed.
-3. Reviewer confirms no dead/commented code remains.</p>
 <hr />
 <h2 id="live-api-docs"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Live API Docs</span></h2>
 <p><strong>Postman Online Documentation:</strong><br />
