@@ -235,6 +235,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../developer-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How It Works
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../getting-started/" class="md-nav__link">
         
   
@@ -263,28 +285,6 @@
   
   <span class="md-ellipsis">
     Features
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer-docs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How It Works
     
   </span>
   
@@ -452,15 +452,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#access-permissions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Access &amp; Permissions
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -541,44 +532,38 @@ Before pushing code, always run a local production build to catch issues early:<
 Heroku</p>
 <hr />
 <p><strong>Deployment Trigger and Access:</strong><br />
-The admin deploys after merging all approved PRs to <code>develop</code> and then to <code>main</code>. Only the admin and one developer have Heroku dashboard access. The developer can view logs only; only the admin can deploy.</p>
+The admin deploys after merging all approved PRs to <code>develop</code> and then to <code>main</code>. Only the admin and one developer have Heroku access. The developer can view logs only; only the admin can deploy.</p>
+<hr />
 <p><strong>Pre-Deployment (Local Build/Test):</strong><br />
 Before deploying, always run local tests and collect static files:</p>
 <pre><code class="language-shell">python manage.py test
-python manage.py collectstatic --noinput
+python manage.py collectstatic 
 </code></pre>
-<p>Ensure all tests pass and static files are collected without errors.</p>
-<p><strong>Environment Variables:</strong><br />
-Environment variables are managed in the Heroku dashboard under Settings → Config Vars. Document all variables in an internal config file for future reference. All new variables must be reviewed and approved in PRs.</p>
-<p><strong>Scaling:</strong><br />
-Heroku dynos scale automatically by default for most use-cases.</p>
-<p><strong>Manual Steps (e.g., Migrations):</strong><br />
+<hr />
+<p><strong>Manual Steps:</strong><br />
 If the deployment includes database schema changes, run migrations:</p>
 <pre><code class="language-shell">heroku run python manage.py migrate --app &lt;heroku-app-name&gt;
 </code></pre>
 <p>Check for migration errors and confirm data integrity.</p>
-<p><strong>Failure &amp; Rollback:</strong><br />
+<hr />
+<p><strong>Failure</strong><br />
 If deployment fails, check logs using:</p>
 <pre><code class="language-shell">heroku logs --tail --app &lt;heroku-app-name&gt;
 </code></pre>
-<p>Fix issues and redeploy. If urgent, rollback using:</p>
-<pre><code class="language-shell">heroku releases:rollback --app &lt;heroku-app-name&gt;
-</code></pre>
-<p>Always notify the team and document the incident.</p>
-<p><strong>Monitoring:</strong><br />
-Use the Heroku dashboard for logs, status, and metrics.</p>
+<p>Fix issues and redeploy.</p>
 <hr />
 <h2 id="cicd-pipeline"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">CI/CD Pipeline</span></h2>
 <p><strong>Tool:</strong><br />
 GitHub Actions</p>
+<hr />
 <p><strong>Workflow:</strong><br />
 Every push and PR triggers automated tests (unit and integration), builds, and lint/code quality checks. If all checks pass, code can be merged and deployed.</p>
-<p><strong>Secrets Management:</strong><br />
-API keys, tokens, and other sensitive secrets are securely stored as GitHub Actions Secrets. Never commit secrets to the repository. To add or update secrets, go to the repo’s Settings → Secrets and variables → Actions, and notify the admin.</p>
+<hr />
 <p><strong>Deployment Automation:</strong><br />
 On merge to <code>main</code>, GitHub Actions triggers production deployments for frontend (to Vercel) and backend (Heroku). Build/test status is visible on PRs and in the GitHub Actions tab.</p>
+<hr />
 <p><strong>Failure Handling:</strong><br />
-If a workflow fails, check logs in the Actions tab, fix issues, and re-run as needed. Escalate unresolved failures to the admin or a senior developer.</p>
+If a workflow fails, check logs in the Actions tab, fix issues, and re-run as needed.</p>
 <hr />
 <h2 id="general-deployment-checklist"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">General Deployment Checklist</span></h2>
 <ol>
@@ -586,12 +571,8 @@ If a workflow fails, check logs in the Actions tab, fix issues, and re-run as ne
 <li>Confirm all required environment variables are documented and set in their dashboards.</li>
 <li>Run all tests locally before pushing code.</li>
 <li>Monitor the deployment process using Vercel/Heroku dashboards and/or GitHub Actions.</li>
-<li>After deployment, verify the application by running manual checks, smoke tests, or automated post-deploy checks.</li>
-<li>If issues arise, follow the rollback procedures and clearly communicate with the team.</li>
+<li>After deployment, verify the application by running manual checks or automated post-deploy checks.</li>
 </ol>
-<hr />
-<h2 id="access-permissions"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">Access &amp; Permissions</span></h2>
-<p>Only the admin and one designated developer have production deployment and dashboard access (Vercel/Heroku). The developer has access to logs only on Heroku; only the admin can deploy. For access requests, contact the admin. The onboarding documentation should explain this process.</p>
 <hr />
 
 

@@ -235,6 +235,28 @@
   
   
     <li class="md-nav__item">
+      <a href="../developer-docs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    How It Works
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../getting-started/" class="md-nav__link">
         
   
@@ -263,28 +285,6 @@
   
   <span class="md-ellipsis">
     Features
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../developer-docs/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    How It Works
     
   </span>
   
@@ -373,18 +373,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#live-api-docs" class="md-nav__link">
+  <a href="#api-documentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Live API Docs
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#api-documentation-screenshots" class="md-nav__link">
-    <span class="md-ellipsis">
-      API Documentation Screenshots
+      API Documentation
     </span>
   </a>
   
@@ -487,78 +478,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-api-usage" class="md-nav__link">
-    <span class="md-ellipsis">
-      Example API Usage
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Example API Usage">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#odoo-integration_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Odoo Integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#google-calendar-meet-integration" class="md-nav__link">
-    <span class="md-ellipsis">
-      Google Calendar / Meet Integration
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#ai-assemblyai-and-gemini" class="md-nav__link">
-    <span class="md-ellipsis">
-      AI, AssemblyAI, and Gemini
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#attachments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Attachments
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#api-testing-documentation" class="md-nav__link">
     <span class="md-ellipsis">
       API Testing &amp; Documentation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#security-authentication" class="md-nav__link">
-    <span class="md-ellipsis">
-      Security &amp; Authentication
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      More Information
     </span>
   </a>
   
@@ -654,271 +576,93 @@
 
 
 
-<h1 id="api-reference"><span  style="font-weight: bold; font-size: 1.5em; color: #232f3e;">API Reference</span></h1>
-<p>Welcome to the <strong>Recos API Reference</strong>. You will find everything you need to integrate with, test, and explore the API endpoints that power the Recos platform.</p>
+<h1 id="api-reference"><span style="font-weight: bold; font-size: 1.5em; color: #232f3e;">API Reference</span></h1>
+<p>Welcome to the <strong>Recos API Reference</strong>. Here you'll find everything you need to integrate with, test, and explore the endpoints that power the Recos platform.</p>
 <hr />
-<h2 id="live-api-docs"><span style="font-weight: 300; font-size: 1.3em; color: #8645e8">Live API Docs</span></h2>
+<h2 id="api-documentation"><span style="font-weight: 500; font-size: 1.25em; color: #8645e8;">API Documentation</span></h2>
 <ul>
-<li><strong>Postman Online Docs:</strong> <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></li>
-<li><strong>Swagger UI:</strong></li>
-</ul>
-<hr />
-<h2 id="api-documentation-screenshots"><span style="font-weight: 300; font-size: 1.3em; color: #8645e8">API Documentation Screenshots</span></h2>
-<table>
-<thead>
-<tr>
-<th><span style="font-weight:600">Swagger UI Example</span></th>
-<th><span style="font-weight:600">Postman API Docs Example</span></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><img alt="Swagger Screenshot 1" src="../images/swagger1.png" /></td>
-<td><img alt="Postman Screenshot" src="../images/swagger.png" /></td>
-</tr>
-<tr>
-<td><img alt="Swagger Screenshot 2" src="../images/swagger2.png" /></td>
-<td><img alt="Postman Screenshot" src="../images/doc1.png" /></td>
-</tr>
-<tr>
-<td><img alt="Swagger Screenshot 3" src="../images/swagger3.png" /></td>
-<td><img alt="Postman Screenshot" src="../images/doc2.png" /></td>
-</tr>
-</tbody>
-</table>
-<hr />
-<h2 id="main-endpoints"><span style="font-weight: 300; font-size: 1.2em; color: #232f3e">Main Endpoints</span></h2>
-<p>Below are the core API endpoints available in Recos. All endpoints follow REST conventions and require authentication.</p>
-<h3 id="authentication"><span style="font-weight: 300; color: #8645e8;">Authentication</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /register/           # Recruiter registration
-POST   /login/              # Login
-POST   /logout/             # Logout
-</pre>
-</div>
-
-<h3 id="password-management"><span style="font-weight: 300; color: #8645e8;">Password Management</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /forgot-password/          # Start password reset
-POST   /reset-password/           # Complete password reset
-POST   /verify-reset-code/        # Verify reset code sent to email
-</pre>
-</div>
-
-<h3 id="recruiter-profile"><span style="font-weight: 300; color: #8645e8;">Recruiter &amp; Profile</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /users/                    # List all recruiters
-PUT    /update-profile/           # Update your profile
-DELETE /delete-account/           # Delete your account
-</pre>
-</div>
-
-<h3 id="odoo-integration"><span style="font-weight: 300; color: #8645e8;">Odoo Integration</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /verify-odoo/              # Verify Odoo account
-POST   /odoo-credentials/         # Add Odoo credentials
-GET    /odoo-credentials/list/    # List Odoo credentials
-GET    /companies/                # List companies
-GET    /companies/&lt;company_id&gt;/jobs/    # Get jobs by company
-</pre>
-</div>
-
-<h3 id="jobs-candidates"><span style="font-weight: 300; color: #8645e8;">Jobs &amp; Candidates</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /jobs/                     # List all jobs
-GET    /jobs/&lt;job_id&gt;/candidates/ # Get candidates for a specific job
-GET    /candidates/               # List all candidates
-GET    /candidates/&lt;candidate_id&gt;/attachments/   # Candidate attachments
-GET    /candidates/&lt;candidate_id&gt;/attachments/download/&lt;attachment_id&gt;/   # Download attachment
-</pre>
-</div>
-
-<h3 id="sync-operations-odoo-data"><span style="font-weight: 300; color: #8645e8;">Sync Operations (Odoo Data)</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /sync/jobs/company/&lt;company_id&gt;/          # Sync jobs for a company
-POST   /sync/jobs/handle-duplicates/             # Sync jobs & handle duplicates
-POST   /sync/jobs/user/                          # Sync jobs for logged-in user
-POST   /sync/candidates/job/&lt;job_id&gt;/            # Sync candidates for a job
-POST   /sync/candidates/company/&lt;company_id&gt;/    # Sync candidates by company
-POST   /sync/candidates/all/                     # Sync all candidates
-POST   /sync/candidates/&lt;candidate_id&gt;/attachments/   # Sync candidate attachments
-</pre>
-</div>
-
-<h3 id="interview-management"><span style="font-weight: 300; color: #8645e8;">Interview Management</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-POST   /interviews/create/                                   # Create interview
-POST   /interviews/&lt;interview_id&gt;/create-calendar-event/     # Add interview to Google Calendar
-GET    /interviews/&lt;interview_id&gt;/analytics/                 # Get interview analytics (AI/Gemini)
-</pre>
-</div>
-
-<h3 id="ai-reports-conversations"><span style="font-weight: 300; color: #8645e8;">AI Reports &amp; Conversations</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /interview_conversations/     # List all interview conversations
-GET    /ai-reports/                  # List all AI reports
-</pre>
-</div>
-
-<h3 id="google-calendar-oauth"><span style="font-weight: 300; color: #8645e8;">Google Calendar &amp; OAuth</span></h3>
-<div class="api-block">
-<pre class="api-dark">
-GET    /auth/google/initiate/    # Start Google OAuth
-GET    /auth/google/callback/    # Google OAuth callback
-GET    /api/auth/google/callback/# API-level OAuth callback
-</pre>
-</div>
-
-<hr />
-<h2 id="example-api-usage"><span style="font-weight: 300; font-size: 1.2em; color: #232f3e">Example API Usage</span></h2>
-<h3 id="odoo-integration_1"><span style="font-weight: 300; color: #8645e8;">Odoo Integration</span></h3>
-<ul>
-<li><strong>Verify Odoo Account:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /verify-odoo/
-{
-  "instance_url": "https://your-odoo.com",
-  "email": "you@example.com",
-  "api_key": "..."
-}
-</pre>
-</div>
-
-<ul>
-<li><strong>Fetch Jobs from Odoo:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /odoo/jobs
-</pre>
-</div>
-
-<ul>
-<li><strong>Fetch Candidates from Odoo:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /odoo/candidates
-</pre>
-</div>
-
-<hr />
-<h3 id="google-calendar-meet-integration"><span style="font-weight: 300; color: #8645e8;">Google Calendar / Meet Integration</span></h3>
-<ul>
-<li><strong>Schedule Interview Event:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /interviews/{interview_id}/create-calendar-event/
-</pre>
-</div>
-<ul>
-<li><strong>Create Google Calendar Event:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /calendar/events
-</pre>
-</div>
-<ul>
-<li><strong>Get All Google Meet Links:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /calendar/meets
-</pre>
-</div>
-
-<hr />
-<h3 id="ai-assemblyai-and-gemini"><span style="font-weight: 300; color: #8645e8;">AI, AssemblyAI, and Gemini</span></h3>
-<ul>
-<li><strong>Start Interview with AI Assistant (transcription):</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-POST /interviews/create/
-</pre>
-</div>
-<ul>
-<li><strong>Get Post-Interview Analytics:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /interviews/{interview_id}/analytics/
-</pre>
-</div>
-
-<hr />
-<h3 id="attachments"><span style="font-weight: 300; color: #8645e8;">Attachments</span></h3>
-<ul>
-<li><strong>Get Candidate Attachments:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /candidates/{candidate_id}/attachments/
-</pre>
-</div>
-
-<ul>
-<li><strong>Download Attachment:</strong></li>
-</ul>
-<div class="api-block">
-<pre class="api-dark">
-GET /candidates/{candidate_id}/attachments/download/{attachment_id}/
-</pre>
-</div>
-
-<hr />
-<h2 id="api-testing-documentation"><span style="font-weight: 300; font-size: 1.2em; color: #232f3e">API Testing &amp; Documentation</span></h2>
-<ul>
-<li><strong>All APIs are tested in Postman.</strong></li>
-<li>See <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">Postman Docs</a>.</li>
-<li>See screenshots above for Swagger UI and Postman documentation examples.</li>
+<li><strong>Swagger UI:</strong> </li>
+<li><strong>Postman Docs:</strong> <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></li>
 </ul>
 <hr />
-<h2 id="security-authentication"><span style="font-weight: 300; font-size: 1.2em; color: #232f3e">Security &amp; Authentication</span></h2>
+<h2 id="main-endpoints"><span style="font-weight: 500; font-size: 1.15em; color: #232f3e;">Main Endpoints</span></h2>
+<p><em>All endpoints follow REST conventions and require authentication. For detailed request/response information, see the <a href="#">Swagger UI</a>.</em></p>
+<hr />
+<h3 id="authentication"><span style="font-weight: 400; color: #8645e8;">Authentication</span></h3>
 <ul>
-<li>Endpoints require authentication via JWT or session.</li>
-<li>Store API keys and secrets in environment variables (<code>.env</code>), <strong>never</strong> commit secrets to your repository.</li>
+<li>Registration</li>
+<li>Login</li>
+<li>Logout</li>
 </ul>
 <hr />
-<h2 id="more-information"><span style="font-weight: 300; font-size: 1.2em; color: #232f3e">More Information</span></h2>
+<h3 id="password-management"><span style="font-weight: 400; color: #8645e8;">Password Management</span></h3>
 <ul>
-<li>For a full list of all endpoints and models, see the <a href="../developer-docs/">Developer Docs</a>.</li>
-<li>For architecture and integration details, see <a href="../developer-docs/">Developer Docs</a> and <a href="../integrations/">Integrations</a>.</li>
+<li>Start password reset</li>
+<li>Complete password reset</li>
+<li>Verify reset code</li>
 </ul>
 <hr />
+<h3 id="recruiter-profile"><span style="font-weight: 400; color: #8645e8;">Recruiter &amp; Profile</span></h3>
+<ul>
+<li>List all recruiters</li>
+<li>Update your profile</li>
+<li>Delete your account</li>
+</ul>
 <hr />
-<style>
-.api-block {
-  background: #232f3e;
-  border-radius: 10px;
-  padding: 18px 18px 10px 18px;
-  margin: 18px 0 24px 0;
-  overflow-x: auto;
-  font-size: 1.09em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-.api-dark {
-  background: #232f3e !important;
-  color: #fff !important;
-  border-radius: 6px;
-  padding: 12px 14px 8px 14px;
-  margin: 0;
-  font-size: 1em;
-  font-family: 'Fira Mono', 'Consolas', 'monospace';
-}
-</style>
+<h3 id="odoo-integration"><span style="font-weight: 400; color: #8645e8;">Odoo Integration</span></h3>
+<ul>
+<li>Verify Odoo account</li>
+<li>Add Odoo credentials</li>
+<li>List Odoo credentials</li>
+<li>List companies</li>
+<li>Get jobs by company</li>
+</ul>
+<hr />
+<h3 id="jobs-candidates"><span style="font-weight: 400; color: #8645e8;">Jobs &amp; Candidates</span></h3>
+<ul>
+<li>List all jobs</li>
+<li>Get candidates for a specific job</li>
+<li>List all candidates</li>
+<li>Candidate attachments</li>
+<li>Download attachment</li>
+</ul>
+<hr />
+<h3 id="sync-operations-odoo-data"><span style="font-weight: 400; color: #8645e8;">Sync Operations (Odoo Data)</span></h3>
+<ul>
+<li>Sync jobs for a company</li>
+<li>Sync jobs &amp; handle duplicates</li>
+<li>Sync jobs for logged-in user</li>
+<li>Sync candidates for a job</li>
+<li>Sync candidates by company</li>
+<li>Sync all candidates</li>
+<li>Sync candidate attachments</li>
+</ul>
+<hr />
+<h3 id="interview-management"><span style="font-weight: 400; color: #8645e8;">Interview Management</span></h3>
+<ul>
+<li>Create interview</li>
+<li>Add interview to Google Calendar</li>
+<li>Get interview analytics (AI/Gemini)</li>
+</ul>
+<hr />
+<h3 id="ai-reports-conversations"><span style="font-weight: 400; color: #8645e8;">AI Reports &amp; Conversations</span></h3>
+<ul>
+<li>List all interview conversations</li>
+<li>List all AI reports</li>
+</ul>
+<hr />
+<h3 id="google-calendar-oauth"><span style="font-weight: 400; color: #8645e8;">Google Calendar &amp; OAuth</span></h3>
+<ul>
+<li>Start Google OAuth</li>
+<li>Google OAuth callback</li>
+<li>API-level OAuth callback</li>
+</ul>
+<hr />
+<h2 id="api-testing-documentation"><span style="font-weight: 500; font-size: 1.15em; color: #232f3e;">API Testing &amp; Documentation</span></h2>
+<ul>
+<li>All APIs are tested in Postman: <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">Postman Docs</a>.</li>
+</ul>
+<hr />
 
 
 
