@@ -401,6 +401,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#backend-unit-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend Unit Tests
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Frontend Testing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      API Testing
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -413,9 +446,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#test-coverage" class="md-nav__link">
+  <a href="#unused-code-refactoring" class="md-nav__link">
     <span class="md-ellipsis">
-      Test Coverage
+      Unused Code &amp; Refactoring
     </span>
   </a>
   
@@ -498,32 +531,103 @@
 
 
 
-<h1 id="qa-process"><span style="font-weight: 1; font-size: 2.1em; color: #232f3e;">Q/A Process</span></h1>
+<h1 id="qa-process"><span style="font-weight: bold; font-size: 1.5em; color: #232f3e;">Q/A Process</span></h1>
 <hr />
-<h2 id="testing"><span style="font-weight: 300; color: #8645e8;">Testing</span></h2>
-<ul>
-<li><span style="color: #232f3e;"><b>Unit Tests:</b></span> All backend logic covered with Django REST unit tests.</li>
-<li><span style="color: #232f3e;"><b>Frontend:</b></span> UI tested with manual and automated checks.</li>
-<li><span style="color: #232f3e;"><b>API:</b></span> All endpoints tested with Postman.</li>
-</ul>
+<h2 id="testing"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Testing</span></h2>
+<h3 id="backend-unit-tests">Backend Unit Tests</h3>
+<p>All backend business logic must be covered by Django REST unit tests.<br />
+Tests should include normal use, edge cases, and error handling.</p>
+<p><strong>How to run and check tests:</strong></p>
+<pre><code class="language-shell">python manage.py test
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-python">from django.test import TestCase
+from .models import Item
+
+class ItemModelTest(TestCase):
+    def test_str(self):
+        item = Item.objects.create(name=&quot;Test Item&quot;)
+        self.assertEqual(str(item), &quot;Test Item&quot;)
+</code></pre>
+<h3 id="frontend-testing">Frontend Testing</h3>
+<p>All UI components must have automated tests using Jest + React Testing Library, as well as manual validation.</p>
+<p><strong>How to run tests:</strong></p>
+<pre><code class="language-shell">npm run test
+</code></pre>
+<p><strong>Example:</strong></p>
+<pre><code class="language-javascript">import { render, screen } from '@testing-library/react';
+import Button from './Button';
+
+test('renders with label', () =&gt; {
+  render(&lt;Button label=&quot;Click me&quot; /&gt;);
+  expect(screen.getByText('Click me')).toBeInTheDocument();
+});
+</code></pre>
+<p>For every new feature, fill out the manual testing checklist.</p>
+<h3 id="api-testing">API Testing</h3>
+<p>All API endpoints must be tested using Postman collections.<br />
+Update Postman tests as endpoints change.</p>
+<p><strong>Example workflow:</strong>
+- Create a Postman request to <code>/api/items/</code>
+- Check for status 200 and correct response JSON.
+- Run the full Postman collection before major merges.</p>
 <hr />
-<h2 id="code-review"><span style="font-weight: 300; color: #8645e8;">Code Review</span></h2>
+<h2 id="code-review"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Code Review</span></h2>
+<p>All code must go through a Pull Request (PR) on GitHub.<br />
+Each PR should be clear, reference related issues, and include tests.</p>
+<p><strong>Before requesting review:</strong>
+- All lint, test, and build checks pass (see CI/CD).
+- Code is documented and free of commented-out or unused code.
+- All new/updated code includes appropriate tests.</p>
+<p><strong>PR Example:</strong></p>
+<pre><code>Title: Add validation for signup form
+
+Summary:
+- Added frontend and backend validation for signup form.
+- Updated error messages.
+- Added tests for new validation logic.
+
+**Review process:**
+- At least one reviewer must approve the PR.
+- Reviewers must flag any unused or commented-out code.
+- Unused code must be removed before merging.
+
+---
+
+## &lt;span style=&quot;font-weight: bold; color: #8645e8; font-size: 1.3em;&quot;&gt;Test Coverage&lt;/span&gt;
+
+**Automated Coverage Reports (Backend):**
+- Use `coverage.py` to generate backend coverage reports.
+- Minimum accepted test coverage is 85%.
+- To check coverage:
+```shell
+coverage run manage.py test
+coverage report
+</code></pre>
 <ul>
-<li><span style="color: #232f3e;"><b>All PRs</b></span> reviewed on GitHub.</li>
-<li><span style="color: #232f3e;"><b>Pre-merge checks</b></span> for lint, tests, and build.</li>
+<li>If coverage drops or new modules are added, attach or link the report in the PR.</li>
 </ul>
+<p><strong>Manual Verification (Integration Flows):</strong>
+- Test critical flows (e.g., user signup, login, email) manually using the app UI and Postman.
+- Document what integration scenarios were tested in the PR or QA checklist.</p>
 <hr />
-<h2 id="test-coverage"><span style="font-weight: 300; color: #8645e8;">Test Coverage</span></h2>
+<h2 id="unused-code-refactoring"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Unused Code &amp; Refactoring</span></h2>
 <ul>
-<li><span style="color: #232f3e;"><b>Automated reports</b></span> generated for backend code.</li>
-<li><span style="color: #232f3e;"><b>Manual verification</b></span> for integration flows.</li>
+<li>Unused or commented-out code must be removed before merging any PR.</li>
+<li>Automated linters (<code>flake8</code> for backend, <code>eslint</code> for frontend) and IDE warnings should be used to find dead code.</li>
+<li>Code reviews must flag and request removal of unused code.</li>
+<li>The team schedules a dedicated code cleanup at least once per sprint (usually at the end).</li>
 </ul>
+<p><strong>Example workflow:</strong>
+1. Run linter before PR to identify unused code.
+2. Remove or refactor as needed.
+3. Reviewer confirms no dead/commented code remains.</p>
 <hr />
-<p><br></p>
-<h2 id="live-api-docs"><span style="font-weight: 300; color: #8645e8;">Live API Docs</span></h2>
-<ul>
-<li><span style="color: #232f3e;"><b>Postman Online Docs:</b></span> <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></li>
-</ul>
+<h2 id="live-api-docs"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Live API Docs</span></h2>
+<p><strong>Postman Online Documentation:</strong><br />
+- Always keep API documentation up to date with code changes.
+- Update docs after adding, changing, or removing endpoints.
+- <a href="https://documenter.getpostman.com/view/45699975/2sB3HqHJX4">View Postman Documentation</a></p>
 <hr />
 
 

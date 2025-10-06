@@ -443,6 +443,24 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#general-deployment-checklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      General Deployment Checklist
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#access-permissions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access &amp; Permissions
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -489,30 +507,82 @@
 
 
 
-<h1 id="deployment-process"><span style="font-weight: 1; font-size: 2.1em; color: #232f3e;">Deployment Process</span></h1>
+<h1 id="deployment-process"><span style="font-size: 2em; color: #232f3e;">Deployment Process</span></h1>
 <hr />
-<h2 id="frontend-deployment"><span style="font-weight: 300; color: #8645e8;">Frontend Deployment</span></h2>
-<ul>
-<li><span style="color: #232f3e;"><b>Platform:</b></span> Vercel</li>
-<li><span style="color: #232f3e;"><b>Branch:</b></span> Auto-deployment from <code>main</code></li>
-<li><span style="color: #232f3e;"><b>Environment Variables:</b></span> Managed securely via <code>.env</code> in Vercel dashboard</li>
-<li><span style="color: #232f3e;"><b>Build &amp; Preview:</b></span> Each push triggers preview builds for PRs and deploys on merge to <code>main</code></li>
-</ul>
+<h2 id="frontend-deployment"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">Frontend Deployment</span></h2>
+<p><strong>Platform:</strong><br />
+Vercel</p>
+<p><strong>Deployment Branch:</strong><br />
+Auto-deployment is enabled from the <code>main</code> branch. Only merges to <code>main</code> trigger a production deployment.</p>
+<p><strong>Pre-Deployment (Local Build):</strong><br />
+Before pushing code, always run a local production build to catch issues early:</p>
+<pre><code class="language-shell">npm run build
+</code></pre>
+<p>Fix any errors that appear before pushing your changes.</p>
+<p><strong>Environment Variables:</strong><br />
+Environment variables are set securely in the Vercel dashboard (Project Settings → Environment Variables). All variables must be documented in an internal file (e.g., <code>ENVIRONMENT_VARIABLES.md</code>). When adding a variable, describe its purpose and expected value, and ensure it is reviewed in the PR.</p>
+<p><strong>Build &amp; Preview Process:</strong><br />
+Each push or PR triggers a Vercel preview build. Preview URLs appear in the PR and the Vercel dashboard. Merging to <code>main</code> triggers a production deployment. To view a preview, open your PR on GitHub and look for the "Vercel Preview" check.</p>
+<p><strong>Failure &amp; Rollback:</strong><br />
+If deployment fails, check build logs and errors in the Vercel dashboard ("Deployments"). Fix the problem and push a new commit. To rollback, revert <code>main</code> to a previous working commit and redeploy. Only admins/developers can access the Vercel dashboard—request access from the admin if needed.</p>
+<p><strong>Monitoring:</strong><br />
+Use the Vercel dashboard for deployment status, logs, and analytics. Set up Vercel alerts (e.g., email) for failed deployments.</p>
 <hr />
-<h2 id="backend-deployment"><span style="font-weight: 300; color: #8645e8;">Backend Deployment</span></h2>
-<ul>
-<li><span style="color: #232f3e;"><b>Platform:</b></span> Django REST API deployed on Heroku</li>
-<li><span style="color: #232f3e;"><b>Environment Variables:</b></span> Configured in Heroku dashboard for security</li>
-<li><span style="color: #232f3e;"><b>Scaling:</b></span> Automatic scaling via Heroku dynos for increased demand</li>
-</ul>
+<h2 id="backend-deployment"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">Backend Deployment</span></h2>
+<p><strong>Platform:</strong><br />
+Django REST API deployed on Heroku</p>
+<p><strong>Deployment Trigger and Access:</strong><br />
+The admin deploys after merging all approved PRs to <code>develop</code> and then to <code>main</code>. Only the admin and one developer have Heroku dashboard access. The developer can view logs only; only the admin can deploy.</p>
+<p><strong>Pre-Deployment (Local Build/Test):</strong><br />
+Before deploying, always run local tests and collect static files:</p>
+<pre><code class="language-shell">python manage.py test
+python manage.py collectstatic --noinput
+</code></pre>
+<p>Ensure all tests pass and static files are collected without errors.</p>
+<p><strong>Environment Variables:</strong><br />
+Environment variables are managed in the Heroku dashboard under Settings → Config Vars. Document all variables in an internal config file for future reference. All new variables must be reviewed and approved in PRs.</p>
+<p><strong>Scaling:</strong><br />
+Heroku dynos scale automatically by default for most use-cases.</p>
+<p><strong>Manual Steps (e.g., Migrations):</strong><br />
+If the deployment includes database schema changes, run migrations:</p>
+<pre><code class="language-shell">heroku run python manage.py migrate --app &lt;heroku-app-name&gt;
+</code></pre>
+<p>Check for migration errors and confirm data integrity.</p>
+<p><strong>Failure &amp; Rollback:</strong><br />
+If deployment fails, check logs using:</p>
+<pre><code class="language-shell">heroku logs --tail --app &lt;heroku-app-name&gt;
+</code></pre>
+<p>Fix issues and redeploy. If urgent, rollback using:</p>
+<pre><code class="language-shell">heroku releases:rollback --app &lt;heroku-app-name&gt;
+</code></pre>
+<p>Always notify the team and document the incident.</p>
+<p><strong>Monitoring:</strong><br />
+Use the Heroku dashboard for logs, status, and metrics.</p>
 <hr />
-<h2 id="cicd-pipeline"><span style="font-weight: 300; color: #8645e8;">CI/CD Pipeline</span></h2>
-<ul>
-<li><span style="color: #232f3e;"><b>Tool:</b></span> GitHub Actions</li>
-<li><span style="color: #232f3e;"><b>Pre-Deployment:</b></span> All codebases run tests, build, and lint checks before deploy</li>
-<li><span style="color: #232f3e;"><b>Automation:</b></span> Automatic deployment on merge to <code>main</code></li>
-<li><span style="color: #232f3e;"><b>Status:</b></span> Build and test status visible in PRs and repository dashboard</li>
-</ul>
+<h2 id="cicd-pipeline"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">CI/CD Pipeline</span></h2>
+<p><strong>Tool:</strong><br />
+GitHub Actions</p>
+<p><strong>Workflow:</strong><br />
+Every push and PR triggers automated tests (unit and integration), builds, and lint/code quality checks. If all checks pass, code can be merged and deployed.</p>
+<p><strong>Secrets Management:</strong><br />
+API keys, tokens, and other sensitive secrets are securely stored as GitHub Actions Secrets. Never commit secrets to the repository. To add or update secrets, go to the repo’s Settings → Secrets and variables → Actions, and notify the admin.</p>
+<p><strong>Deployment Automation:</strong><br />
+On merge to <code>main</code>, GitHub Actions triggers production deployments for frontend (to Vercel) and backend (Heroku). Build/test status is visible on PRs and in the GitHub Actions tab.</p>
+<p><strong>Failure Handling:</strong><br />
+If a workflow fails, check logs in the Actions tab, fix issues, and re-run as needed. Escalate unresolved failures to the admin or a senior developer.</p>
+<hr />
+<h2 id="general-deployment-checklist"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">General Deployment Checklist</span></h2>
+<ol>
+<li>Ensure all code is reviewed and merged into the appropriate branch.</li>
+<li>Confirm all required environment variables are documented and set in their dashboards.</li>
+<li>Run all tests locally before pushing code.</li>
+<li>Monitor the deployment process using Vercel/Heroku dashboards and/or GitHub Actions.</li>
+<li>After deployment, verify the application by running manual checks, smoke tests, or automated post-deploy checks.</li>
+<li>If issues arise, follow the rollback procedures and clearly communicate with the team.</li>
+</ol>
+<hr />
+<h2 id="access-permissions"><span style="font-size: 1.3em; color: #8645e8; font-weight: 500;">Access &amp; Permissions</span></h2>
+<p>Only the admin and one designated developer have production deployment and dashboard access (Vercel/Heroku). The developer has access to logs only on Heroku; only the admin can deploy. For access requests, contact the admin. The onboarding documentation should explain this process.</p>
 <hr />
 
 
