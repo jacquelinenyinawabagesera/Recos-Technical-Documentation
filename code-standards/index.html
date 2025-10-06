@@ -698,19 +698,20 @@
 <ul>
 <li>Always use <span style="color:#232f3e; font-weight:bold;">functional components</span> for consistency and performance.</li>
 <li><strong>Example:</strong><br />
-  ```typescript
-  // Good
-  export function UserCard({ name }: { name: string }) {
-    return <div>{name}</div>;
-  }</li>
-</ul>
-<p>// Avoid
-  class UserCard extends React.Component {
-    render() {
-      return <div>{this.props.name}</div>;
-    }
+      ```typescript
+        // Good
+         export function UserCard({ name }: { name: string }) {
+          return <div>{name}</div>;
+        }<pre><code>// Avoid
+class UserCard extends React.Component {
+  render() {
+    return &lt;div&gt;{this.props.name}&lt;/div&gt;;
   }
-  ```</p>
+}
+```
+</code></pre>
+</li>
+</ul>
 <h3 id="naming-conventions"><span style="color:#232f3e; font-weight:bold;">Naming Conventions</span></h3>
 <ul>
 <li><span style="color:#232f3e; font-weight:bold;">camelCase</span> for variables and functions<br />
@@ -814,8 +815,6 @@
 <li>Added API integration for updating user data</li>
 <li>Improved error handling</li>
 </ul>
-<p>Fixes #42
-  ```</p>
 <h3 id="documentation"><span style="color:#232f3e; font-weight:bold;">Documentation</span></h3>
 <ul>
 <li>Document all components, functions, and modules using <span style="color:#232f3e; font-weight:bold;">JSDoc</span> (frontend) or <span style="color:#232f3e; font-weight:bold;">Python docstrings</span> (backend).</li>

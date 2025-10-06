@@ -437,15 +437,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-review" class="md-nav__link">
-    <span class="md-ellipsis">
-      Code Review
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#unused-code-refactoring" class="md-nav__link">
     <span class="md-ellipsis">
       Unused Code &amp; Refactoring
@@ -571,45 +562,6 @@ Update Postman tests as endpoints change.</p>
 - Create a Postman request to <code>/api/items/</code>
 - Check for status 200 and correct response JSON.
 - Run the full Postman collection before major merges.</p>
-<hr />
-<h2 id="code-review"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Code Review</span></h2>
-<p>All code must go through a Pull Request (PR) on GitHub.<br />
-Each PR should be clear, reference related issues, and include tests.</p>
-<p><strong>Before requesting review:</strong>
-- All lint, test, and build checks pass (see CI/CD).
-- Code is documented and free of commented-out or unused code.
-- All new/updated code includes appropriate tests.</p>
-<p><strong>PR Example:</strong></p>
-<pre><code>Title: Add validation for signup form
-
-Summary:
-- Added frontend and backend validation for signup form.
-- Updated error messages.
-- Added tests for new validation logic.
-
-**Review process:**
-- At least one reviewer must approve the PR.
-- Reviewers must flag any unused or commented-out code.
-- Unused code must be removed before merging.
-
----
-
-## &lt;span style=&quot;font-weight: bold; color: #8645e8; font-size: 1.3em;&quot;&gt;Test Coverage&lt;/span&gt;
-
-**Automated Coverage Reports (Backend):**
-- Use `coverage.py` to generate backend coverage reports.
-- Minimum accepted test coverage is 85%.
-- To check coverage:
-```shell
-coverage run manage.py test
-coverage report
-</code></pre>
-<ul>
-<li>If coverage drops or new modules are added, attach or link the report in the PR.</li>
-</ul>
-<p><strong>Manual Verification (Integration Flows):</strong>
-- Test critical flows (e.g., user signup, login, email) manually using the app UI and Postman.
-- Document what integration scenarios were tested in the PR or QA checklist.</p>
 <hr />
 <h2 id="unused-code-refactoring"><span style="font-weight: bold; color: #8645e8; font-size: 1.3em;">Unused Code &amp; Refactoring</span></h2>
 <ul>
