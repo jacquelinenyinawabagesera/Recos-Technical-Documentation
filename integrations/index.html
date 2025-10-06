@@ -507,15 +507,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#best-practices_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -558,33 +549,15 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#best-practices_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      Best Practices
-    </span>
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#general-troubleshooting-best-practices" class="md-nav__link">
+  <a href="#references" class="md-nav__link">
     <span class="md-ellipsis">
-      General Troubleshooting &amp; Best Practices
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references-further-reading" class="md-nav__link">
-    <span class="md-ellipsis">
-      References &amp; Further Reading
+      References
     </span>
   </a>
   
@@ -711,8 +684,7 @@
 <li><a href="#google-calendar--google-meet-integration">Google Calendar &amp; Google Meet Integration</a></li>
 <li><a href="#google-speech-to-text-integration">Google Speech-to-Text Integration</a></li>
 <li><a href="#gemini-integration-ai-reports--question-generation">Gemini Integration (AI Reports &amp; Question Generation)</a></li>
-<li><a href="#general-troubleshooting--best-practices">General Troubleshooting &amp; Best Practices</a></li>
-<li><a href="#references--further-reading">References &amp; Further Reading</a></li>
+<li><a href="#references--further-reading">References </a></li>
 </ol>
 <hr />
 <h2 id="odoo-integration"><span style="font-weight: bold; color: #232f3e;">Odoo Integration</span></h2>
@@ -782,7 +754,6 @@ It is a core part of the interview process, allowing recruiters to:</p>
 <h3 id="enable-apis">Enable APIs</h3>
 <ul>
 <li>Google Calendar API</li>
-<li>Google People API (for attendee profiles)</li>
 <li>Google Meet is enabled by default when creating Calendar events</li>
 </ul>
 <h3 id="oauth-20-client-credentials">OAuth 2.0 Client Credentials</h3>
@@ -859,11 +830,6 @@ response = requests.post(
 )
 transcript_text = response.json()['results'][0]['alternatives'][0]['transcript']
 </code></pre>
-<h3 id="best-practices_1">Best Practices</h3>
-<ul>
-<li>Only store and transmit audio securely</li>
-<li>Delete audio files after transcription to preserve privacy</li>
-</ul>
 <hr />
 <h2 id="gemini-integration-ai-reports-question-generation"><span style="font-weight: bold; color: #232f3e;">Gemini Integration (AI Reports &amp; Question Generation)</span></h2>
 <p><strong>Purpose in Recos:</strong><br />
@@ -904,22 +870,7 @@ data = {
 response = requests.post(&quot;https://gemini.googleapis.com/v1/analyze&quot;, json=data, headers=headers)
 report = response.json()
 </code></pre>
-<h3 id="best-practices_2">Best Practices</h3>
-<ul>
-<li>Limit the amount of personal data sent for analysis</li>
-<li>Use secure HTTPS endpoints for all Gemini API calls</li>
-<li>Document and review how AI-generated insights are presented to recruiters</li>
-</ul>
-<hr />
-<h2 id="general-troubleshooting-best-practices"><span style="font-weight: bold; color: #232f3e;">General Troubleshooting &amp; Best Practices</span></h2>
-<ul>
-<li>Always use <code>.env</code> for all secrets—never commit credentials or sensitive files.</li>
-<li>Rotate API keys regularly and restrict access by least privilege.</li>
-<li>Encrypt sensitive files (<code>credentials.json</code>, audio files) and store securely.</li>
-<li>Monitor integration logs and error reports to diagnose issues quickly.</li>
-</ul>
-<hr />
-<h2 id="references-further-reading"><span style="font-weight: bold; color: #232f3e;">References &amp; Further Reading</span></h2>
+<h2 id="references"><span style="font-weight: bold; color: #232f3e;">References</span></h2>
 <ul>
 <li><a href="https://www.odoo.com/documentation/">Odoo API Documentation</a></li>
 <li><a href="https://developers.google.com/calendar/api/quickstart/python">Google Calendar API Quickstart</a></li>
