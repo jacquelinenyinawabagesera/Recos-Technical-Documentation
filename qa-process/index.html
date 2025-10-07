@@ -522,11 +522,16 @@ test('renders with label', () =&gt; {
   expect(screen.getByText('Click me')).toBeInTheDocument();
 });
 </code></pre>
-<p>For every new feature, fill out the manual testing checklist.</p>
+<p>Every new feature has to be manually tested to ensure it works as expected. <br>
+Whenever a new feature is added, interact with it in the platform and confirm it works as intended.</p>
 <hr />
 <p><strong><span style="font-weight: bold; font-size: 1.1em;">API Testing</span></strong></p>
-<p>All API endpoints must be tested using Postman collections.<br />
-Update Postman tests as endpoints change.</p>
+<p>All API endpoints in the Recos platform must be tested using Postman. For every new endpoint developed,a corresponding Postman request will be created to verify its functionality, expected responses, and error handling.</p>
+<ul>
+<li>Create Postman tests for every new API endpoint in Recos.  </li>
+<li>Update Postman tests promptly whenever endpoints change.  </li>
+<li>Regularly run the full Postman collection to validate all API functionality.</li>
+</ul>
 <hr />
 <h2 id="example-workflow"><span style="font-weight: bold;font-size: 1em;">Example workflow</span></h2>
 <hr />
